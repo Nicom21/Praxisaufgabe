@@ -17,6 +17,7 @@
         android:layout_marginTop="32dp"
         android:layout_weight="1"
         android:text="Quersumme"
+        android:textAppearance="@android:style/TextAppearance.Material.Headline"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -28,29 +29,32 @@
         android:layout_marginLeft="24dp"
         android:layout_marginTop="32dp"
         android:text="Fibonacci"
+        android:textAppearance="@android:style/TextAppearance.Material.Headline"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/btn2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginLeft="32dp"
         android:layout_marginTop="24dp"
         android:text="BERECHNE!"
+        android:background="@android:color/holo_red_dark"
+        android:textColor="@android:color/white"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/Ausgabe2"
         android:layout_width="111dp"
         android:layout_height="191dp"
         android:layout_marginStart="32dp"
         android:layout_marginLeft="32dp"
         android:layout_marginTop="24dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button2" />
+        app:layout_constraintTop_toBottomOf="@+id/btn2" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -65,7 +69,7 @@
 
         <EditText
             android:id="@+id/Eingabe"
-            android:layout_width="60dp"
+            android:layout_width="1dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:ems="10"
@@ -75,14 +79,14 @@
         <Button
             android:id="@+id/btn"
             android:layout_width="1dp"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="=" />
 
         <TextView
             android:id="@+id/Ausgabe"
-            android:layout_width="60dp"
-            android:layout_height="37dp"
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
             android:layout_weight="1" />
 </LinearLayout>
 

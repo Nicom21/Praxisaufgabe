@@ -14,16 +14,16 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //  Erstellen des Eingabefeldes
+        //  Erstellen des Eingabefeldes (Quersumme)
         final EditText Eingabe = findViewById(R.id.Eingabe);
 
-        //  Erstellen des Buttons
+        //  Erstellen des Buttons (Quersumme)
         Button btn = findViewById(R.id.btn);
 
-        //  Erstellen des Ausgabefeldes
+        //  Erstellen des Ausgabefeldes (Quersumme)
         final TextView Ausgabe = findViewById(R.id.Ausgabe);
 
-        //  Erstellen der Funktion des Buttons
+        //  Erstellen der Funktion des Buttons (Quersumme)
         btn.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
@@ -32,11 +32,28 @@ public class MainActivity extends AppCompatActivity {
                 Ausgabe.setText(calculateDigitSum(Eingabe.getText().toString()));
             }
         });
+
+        //  Erstellen des Ausgabefeldes (Fibonacci)
+        final TextView Ausgabe2 = findViewById(R.id.Ausgabe2);
+
+        //Erstellen des Buttons (Fibonacci)
+        Button btn2 = findViewById(R.id.btn2);
+
+        //Erstellen der Funktion des Buttons (Fibonacci)
+        btn2.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                //Ausgabe der ersten 30 Stellen der Fibonacci-Folge
+                Ausgabe2.setText(calculateFibonacciRow());
+            }
+        });
+
+
     }
 
-    public String calculateDigitSum(String b) {
+    public String calculateDigitSum(String input) {
         //  parsen des erhaltenen String-Wertes auf einen Integer um damit weiter zu rechnen
-       int c = Integer.parseInt(b);
+       int c = Integer.parseInt(input);
 
        int rechenvariable = c;
        double count = 0;
@@ -67,7 +84,28 @@ public class MainActivity extends AppCompatActivity {
         quersumme = quersumme + rechenvariable;
 
        //   zurückparsen des verrechneten Inegers auf einen String um ausgegeben werden zu können
-       b = Integer.toString(quersumme);
-       return b;
+       input = Integer.toString(quersumme);
+       return input;
       }
+
+    public String calculateFibonacciRow() {
+
+        int fib1 = 0;
+        int fib2 = 1;
+        int fib3;
+
+        String b = fib1 + "\n" + fib2 + "\n";
+
+        int count = 0;
+
+        while(count < 30){
+            fib3 = fib1 + fib2;
+            fib1 = fib2;
+            fib2 = fib3;
+            b = b + fib3 + "\n";
+            count++;
+        }
+
+        return b;
+    }
 }
